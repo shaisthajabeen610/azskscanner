@@ -9,7 +9,7 @@ $envar = (get-item env:$envarname).Value
 
     Connect-AzAccount -UseDeviceAuthentication
  $Id = Get-Azsubscription
- Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber
+ Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber -Force
 Import-Module AzSK 
  foreach ($Ids in $Id)
  {
