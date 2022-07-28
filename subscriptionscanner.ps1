@@ -25,7 +25,7 @@ Remove-Item –path $CopyFolderPath –recurse
     Connect-AzAccount -UseDeviceAuthentication
  $Id = Get-Azsubscription
  Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber -Force
-#Import-Module AzSK 
+"Import-Module AzSK -RequiredVersion 3.11.0
  foreach ($Ids in $Id)
  {
  $draft = Get-AzSKSubscriptionSecurityStatus -SubscriptionId $Ids.id
