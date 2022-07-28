@@ -1,4 +1,4 @@
-﻿   Start-Process Powershell -ArgumentList $PSCommandPath -Verb RunAs
+sudo pwsh
     Install-Module Az -Force
 Import-Module Az   
 
