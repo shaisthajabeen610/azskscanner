@@ -1,8 +1,9 @@
-﻿   Install-Module Az
+﻿   Install-Module Az -Force
 Import-Module Az   
  Connect-AzAccount 
  $Id = Get-Azsubscription
- Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck 
+ 
+ Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck  -Force
 Import-Module AzSK 
  foreach ($Ids in $Id)
  {
