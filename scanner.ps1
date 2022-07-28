@@ -5,8 +5,10 @@ az upgrade
 Connect-AzAccount -UseDeviceAuthentication
  $Id = Get-Azsubscription
  
- Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck  -Force
-Import-Module AzSK 
+# Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck  -Force
+# Import-Module AzSK 
+Install -Module -Name AzSK -Scope CurrentUser -AllowClobber -Force -SkipPublisherCheck 
+Set-AzSKPolicySettings -AutoUpdate On
  foreach ($Ids in $Id)
  {
  $draft = Get-AzSKSubscriptionSecurityStatus -SubscriptionId $Ids.id
