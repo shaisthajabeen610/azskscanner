@@ -1,4 +1,4 @@
-sudo pwsh
+
     Install-Module Az -Force
 Import-Module Az   
 
@@ -8,7 +8,7 @@ Connect-AzAccount -UseDeviceAuthentication
  
 # Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck  -Force
 # Import-Module AzSK 
-sudo pwsh Install-Module -Name AzSK -Scope AllUsers -AllowClobber -Force 
+sudo pwsh Install-Module -Name AzSK -Scope CurrentUser -AllowClobber -Force 
 Import-Module AzSK 
 Set-AzSKPolicySettings -AutoUpdate On
  foreach ($Ids in $Id)
