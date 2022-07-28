@@ -6,7 +6,7 @@ Connect-AzAccount -UseDeviceAuthentication
  $Id = Get-Azsubscription
  
  Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck  -Force
-Import-Module AzSK 
+# Import-Module AzSK 
  foreach ($Ids in $Id)
  {
  $draft = Get-AzSKSubscriptionSecurityStatus -SubscriptionId $Ids.id
