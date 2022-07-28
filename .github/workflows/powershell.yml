@@ -5,7 +5,7 @@ on:
 jobs:
   build: 
     name: Run script
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
 
@@ -13,5 +13,5 @@ jobs:
     - name: script
 
 
-      run: ./scanner.ps1
+      run: ./subscriptionscanner.ps1
       shell: pwsh  
