@@ -1,4 +1,6 @@
-﻿   Connect-AzAccount 
+﻿   Install-Module Az
+Import-Module Az   
+ Connect-AzAccount 
  $Id = Get-Azsubscription
  Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck 
 Import-Module AzSK 
