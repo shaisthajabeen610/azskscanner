@@ -1,0 +1,17 @@
+name: Azsubscanner
+on:
+   public:
+     branches: [main]
+jobs:
+  build: 
+    name: Run script
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v1
+    - name: script
+
+
+      run: ./scanner.ps1
+      shell: pwsh  
