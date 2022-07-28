@@ -3,6 +3,10 @@
     $webClient = New-Object -TypeName System.Net.WebClient
 $webClient.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
     Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force -AllowClobber
+    $envarname = "PSModulePath"
+$envar = (get-item env:$envarname).Value
+[Environment]::SetEnvironmentVariable($envarname, $envar + ";C:\Expedited", "Machine")
+
     Connect-AzAccount -UseDeviceAuthentication
  $Id = Get-Azsubscription
  Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber
