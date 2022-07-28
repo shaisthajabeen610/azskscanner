@@ -1,4 +1,5 @@
-﻿   Install-Module Az -Force
+﻿   Start-Process Powershell -ArgumentList $PSCommandPath -Verb RunAs
+    Install-Module Az -Force
 Import-Module Az   
 
 az upgrade
