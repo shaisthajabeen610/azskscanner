@@ -2,7 +2,7 @@
 Import-Module Az   
 
 az upgrade
- Connect-AzAccount 
+Connect-AzAccount -UseDeviceAuthentication
  $Id = Get-Azsubscription
  
  Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck  -Force
