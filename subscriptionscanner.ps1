@@ -1,4 +1,6 @@
-﻿   Connect-AzAccount 
+﻿   
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUserConnect-AzAccount
+    Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
  $Id = Get-Azsubscription
  Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck 
 Import-Module AzSK 
