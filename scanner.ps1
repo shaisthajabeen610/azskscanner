@@ -8,7 +8,7 @@ Connect-AzAccount -UseDeviceAuthentication
  
 # Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck  -Force
 # Import-Module AzSK 
-sudo pwsh Install-Module -Name AzSK -Scope CurrentUser -AllowClobber -Force 
+Install-Module -Name AzSK -Scope CurrentUser -AllowClobber -Force 
 Import-Module AzSK 
 Set-AzSKPolicySettings -AutoUpdate On
  foreach ($Ids in $Id)
