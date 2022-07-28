@@ -1,7 +1,9 @@
 ﻿   
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUserConnect-AzAccount
+    $webClient = New-Object -TypeName System.Net.WebClient
+$webClient.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
     Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
-    Connect-AzAccount
+    Connect-AzAccount -UseDeviceAuthentication
  $Id = Get-Azsubscription
  Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck 
 Import-Module AzSK 
