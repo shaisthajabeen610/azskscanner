@@ -1,6 +1,6 @@
 name: Azsubscanner
 on:
-   psublic:
+   push:
      branches: [main]
 jobs:
   build: 
