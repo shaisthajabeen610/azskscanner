@@ -62,7 +62,7 @@ if ($env:PATH -notcontains $InstallPath) {
     Connect-AzAccount -UseDeviceAuthentication
  $Id = Get-Azsubscription
  Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber -Force
-"Import-Module AzSK -RequiredVersion 3.11.0
+Import-Module AzSK -RequiredVersion 3.11.0
  foreach ($Ids in $Id)
  {
  $draft = Get-AzSKSubscriptionSecurityStatus -SubscriptionId $Ids.id
