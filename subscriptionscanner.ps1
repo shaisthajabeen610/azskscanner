@@ -67,7 +67,8 @@ Import-Module AzSK -RequiredVersion 3.11.0
  {
  $draft = Get-AzSKSubscriptionSecurityStatus -SubscriptionId $Ids.id
 $children = Get-ChildItem -Filter *.csv $draft
-azcopy copy $draft/$children https://azsk1.blob.core.windows.net/azsk/?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2022-08-17T12:26:49Z&st=2022-07-29T04:26:49Z&spr=https,http&sig=aZTMemnP%2FCmT%2BBUhG52hc6QTEEoH3zGSw1qvK8oUOZo%3D --recursive=true
+$storage_account =  https://azsk1.blob.core.windows.net/azsk/?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2022-08-17T12:26:49Z&st=2022-07-29T04:26:49Z&spr=https,http&sig=aZTMemnP%2FCmT%2BBUhG52hc6QTEEoH3zGSw1qvK8oUOZo%3D
+azcopy copy $draft/$children $storage_account --recursive=true
  
  }
 
