@@ -67,10 +67,10 @@ Uninstall-AzureRm
  foreach ($Ids in $Id)
  {
  Import-Module AzSK
- $draft = Get-AzSKSubscriptionSecurityStatus -SubscriptionId $Ids.id
+ $draft = Get-AzSKSubscriptionSecurityStatus -SubscriptionId $Ids.id  -ErrorAction SilentlyContinue
 $children = Get-ChildItem -Filter *.csv $draft
 $storage_account =  https://azsk1.blob.core.windows.net/azsk/?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2022-07-29T12:43:33Z&st=2022-07-29T04:43:33Z&spr=https&sig=85hkhqeLQ1ktA7GPSGkvZHuGOusg1bwuI%2FEfliJTGBU%3D
-azcopy copy $draft/$children $storage_account --recursive=true
+azcopy copy $draft/$children $storage_account --recursive=true  -ErrorAction SilentlyContinue
  
  }
 
