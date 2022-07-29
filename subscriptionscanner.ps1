@@ -59,7 +59,8 @@ if ($env:PATH -notcontains $InstallPath) {
     [Environment]::SetEnvironmentVariable("Path", ($env:path), [System.EnvironmentVariableTarget]::Machine)
 }
 
-az login --use-device-code
+Connect-AzAccount -UseDeviceAuthentication
+Uninstall-AzureRm
  $Id = Get-Azsubscription
  Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber -Force | Import-Module AzSK -RequiredVersion 3.11.0
 
