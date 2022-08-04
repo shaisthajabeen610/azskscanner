@@ -45,7 +45,7 @@ Install-Module Az -Confirm -Force
 Connect-AzAccount -UseDeviceAuthentication
 
  $Id = Get-Azsubscription
- Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber -Force -Confirm
+ Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber -Force 
 
  foreach ($Ids in $Id)
  {
