@@ -45,7 +45,7 @@ Install-Module Az -Confirm -Force
 Connect-AzAccount -UseDeviceAuthentication
 
  $Id = Get-Azsubscription
- Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber -Force 
+ Install-Module AzSK -Scope CurrentUser  -AllowClobber -Force -Confirm
 Uninstall-AzureRm
  foreach ($Ids in $Id)
  {
