@@ -36,6 +36,8 @@ if ($env:PATH -notcontains $InstallPath) {
     [Environment]::SetEnvironmentVariable("Path", ($env:path), [System.EnvironmentVariableTarget]::Machine)
 }
 
+Install-Module Az -Confirm -Force
+
 Connect-AzAccount -UseDeviceAuthentication
 
  $Id = Get-Azsubscription
