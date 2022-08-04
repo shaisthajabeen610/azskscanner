@@ -1,12 +1,4 @@
-﻿ 
-    Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force -AllowClobber -Confirm
-    $envarname = "PSModulePath"
-
-
-
-
-
-
+﻿ Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force -AllowClobber -Confirm
 $InstallPath = 'C:\AzCopy'
 
 # Cleanup Destination
