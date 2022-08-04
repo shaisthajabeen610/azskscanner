@@ -1,26 +1,11 @@
-﻿   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-    $webClient = New-Object -TypeName System.Net.WebClient
-$webClient.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
-    Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force -AllowClobber
+﻿ 
+    Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force -AllowClobber -Confirm
     $envarname = "PSModulePath"
-$envar = (get-item env:$envarname).Value
-[Environment]::SetEnvironmentVariable($envarname, $envar + ";C:\Expedited", "Machine")
-$AzSKModuleRepoPath = "https://azsdkossep.azureedge.net/3.7.0/AzSK.zip"
 
-#Copy module zip to temp location
-$CopyFolderPath = $env:temp + "\AzSKTemp\"
-if(-not (Test-Path -Path $CopyFolderPath))
-{
-  mkdir -Path $CopyFolderPath -Force | Out-Null
-}
-$ModuleFilePath = $CopyFolderPath + "AzSK.zip"           
-Invoke-WebRequest -Uri $AzSKModuleRepoPath -OutFile $ModuleFilePath
 
-#Extract zip file to module location
-Expand-Archive -Path $ModuleFilePath -DestinationPath "$Env:USERPROFILE\documents\WindowsPowerShell\modules" -Force
 
-#Clean up temp location
-Remove-Item –path $CopyFolderPath –recurse
+
+
 
 $InstallPath = 'C:\AzCopy'
 
@@ -60,9 +45,9 @@ if ($env:PATH -notcontains $InstallPath) {
 }
 
 Connect-AzAccount -UseDeviceAuthentication
-Uninstall-AzureRm
+
  $Id = Get-Azsubscription
- Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber -Force 
+ Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber -Force -Confirm
 
  foreach ($Ids in $Id)
  {
