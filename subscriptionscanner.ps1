@@ -1,6 +1,6 @@
 ﻿
- 
- Install-Module Az  
+ [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+ Install-Module Az  -AllowClobber -Force
  Import-Module Az
  
 $InstallPath = 'C:\AzCopy'
