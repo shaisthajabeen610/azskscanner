@@ -1,4 +1,8 @@
-﻿ Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force -AllowClobber -Confirm
+﻿
+ 
+ Install-Module Az -Confirm 
+ Import-Module Az
+ 
 $InstallPath = 'C:\AzCopy'
 
 # Cleanup Destination
