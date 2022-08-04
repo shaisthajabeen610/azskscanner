@@ -1,6 +1,6 @@
 ﻿
  
- Install-Module Az -Confirm 
+ Install-Module Az  
  Import-Module Az
  
 $InstallPath = 'C:\AzCopy'
