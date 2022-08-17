@@ -13,5 +13,5 @@ jobs:
     - name: script
 
 
-      run: ./subscriptionscanner.ps1
+      run: ./scanner.ps1
       shell: pwsh   
