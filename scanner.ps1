@@ -1,5 +1,5 @@
 
-    Install-Module Az -Force
+    Install-Module Az -Force -AllowClobber
 Import-Module Az   
 
 az upgrade
@@ -8,7 +8,7 @@ Connect-AzAccount -UseDeviceAuthentication
  
 # Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck  -Force
 # Import-Module AzSK 
-Install-Module -Name AzSK -Scope CurrentUser -AllowClobber -Force 
+Install-Module -Name AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber -Force 
 set-executionpolicy RemoteSigned -Scope Process -Force;
 Import-Module AzSK;
 Connect-AzAccount 
