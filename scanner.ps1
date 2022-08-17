@@ -2,16 +2,12 @@
     Install-Module Az -Force -AllowClobber
 Import-Module Az   
 
-az upgrade
-Connect-AzAccount -UseDeviceAuthentication
- $Id = Get-Azsubscription
- 
 # Install-Module AzSK -Scope CurrentUser -SkipPublisherCheck  -Force
 # Import-Module AzSK 
 Install-Module -Name AzSK -Scope CurrentUser -SkipPublisherCheck -AllowClobber -Force 
 set-executionpolicy RemoteSigned -Scope Process -Force;
 Import-Module AzSK;
-Connect-AzAccount 
+Connect-AzAccount -UseDeviceAuthentication
 Set-AzSKPrivacyNoticeResponse -AcceptPrivacyNotice "yes";
 $Id = Get-Azsubscription;
 foreach ($Ids in $Id)
